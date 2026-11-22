@@ -1,4 +1,4 @@
-# Restaurant Management System
+# Restaurant Reservation System
 
 A Windows Forms restaurant reservation and management application built with C#, .NET 8, and SQLite. The system uses a simple MVC-style organization to support customer reservations and administrative restaurant operations.
 
@@ -37,7 +37,7 @@ RestaurantReservation/
 ├── Data/          SQLite database, repositories, and password hashing
 ├── Models/        Application data models
 ├── Views/         Windows Forms user interface
-└── Restaurant Management System.csproj
+└── Restaurant Reservation System.csproj
 ```
 
 ## Requirements
@@ -54,7 +54,7 @@ RestaurantReservation/
    git clone https://github.com/Fiacre-Cash/lab3_26854_Fiacre_mugisha_Restauarant_reservation_system.git
    ```
 
-2. Open `RestaurantReservation/Restaurant Management System.csproj` in Visual Studio.
+2. Open `RestaurantReservation/Restaurant Reservation System.csproj` in Visual Studio.
 3. Restore NuGet packages if Visual Studio does not restore them automatically.
 4. Build and run the project.
 
@@ -91,9 +91,9 @@ The database directory is created automatically when the application starts.
 From the repository root, run:
 
 ```powershell
-dotnet restore "RestaurantReservation\Restaurant Management System.csproj"
-dotnet build "RestaurantReservation\Restaurant Management System.csproj"
-dotnet run --project "RestaurantReservation\Restaurant Management System.csproj"
+dotnet restore "RestaurantReservation\Restaurant Reservation System.csproj"
+dotnet build "RestaurantReservation\Restaurant Reservation System.csproj"
+dotnet run --project "RestaurantReservation\Restaurant Reservation System.csproj"
 ```
 
 ## Repository
