@@ -1,0 +1,29 @@
+-- Reference copy of the schema the app creates automatically on first launch (SQLite).
+CREATE TABLE IF NOT EXISTS Users (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
+    Email TEXT NOT NULL UNIQUE,
+    PasswordHash TEXT NOT NULL,
+    Role TEXT NOT NULL DEFAULT 'user'
+);
+CREATE TABLE IF NOT EXISTS Reservations (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    RefNumber TEXT NOT NULL,
+    UserId INTEGER NOT NULL REFERENCES Users(Id) ON DELETE CASCADE,
+    FullName TEXT NOT NULL, Email TEXT NOT NULL, Phone TEXT NOT NULL,
+    Date TEXT NOT NULL, Time TEXT NOT NULL, Guests INTEGER NOT NULL,
+    Seating TEXT NOT NULL DEFAULT 'Any', Occasion TEXT NOT NULL DEFAULT '',
+    SpecialRequests TEXT NOT NULL DEFAULT '', Status TEXT NOT NULL DEFAULT 'pending',
+    PaymentMethod TEXT NOT NULL DEFAULT '', PaymentAccount TEXT NOT NULL DEFAULT '',
+    PaymentStatus TEXT NOT NULL DEFAULT 'unpaid', PaymentNote TEXT NOT NULL DEFAULT ''
+);
+CREATE TABLE IF NOT EXISTS MenuItems (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL, Category TEXT NOT NULL, Description TEXT NOT NULL DEFAULT '',
+    Price REAL NOT NULL, Available INTEGER NOT NULL DEFAULT 1
+);
+CREATE TABLE IF NOT EXISTS RestaurantTables (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Code TEXT NOT NULL UNIQUE, Type TEXT NOT NULL, Capacity INTEGER NOT NULL,
+    Status TEXT NOT NULL DEFAULT 'available'
+);
